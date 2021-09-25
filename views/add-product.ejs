@@ -8,9 +8,22 @@
 
     <main>
         <form class="product-form" action="/admin/add-product" method="POST">
+            <h1>Add Product</h1>
             <div class="form-control">
                 <label for="title">Title</label>
                 <input type="text" name="title" id="title">
+            </div>
+            <div class="form-control">
+                <label for="author">Author</label>
+                <input type="text" name="author" id="author">
+            </div>
+            <div class="form-control">
+                <label for="price">Price</label>
+                <input type="text" name="price" id="price">
+            </div>
+            <div class="form-control">
+                <label for="summary">Summary</label>
+                <input type="text" name="summary" id="summary">
             </div>
 
             <button class="btn" type="submit">Add Product</button>
