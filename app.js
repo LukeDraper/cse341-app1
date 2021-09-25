@@ -1,4 +1,5 @@
 const path = require('path');
+const port = process.env.PORT || 3000;
 
 const bodyParser = require('body-parser');
 const express = require('express');
@@ -22,4 +23,4 @@ app.use((req, res, next) => {
 });
 
 
-app.listen(3000);
+app.listen(port);
