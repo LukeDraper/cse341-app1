@@ -20,6 +20,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 const options = {
+    useNewUrlParser: true,
     family: 4
 };
 
