@@ -23,7 +23,7 @@ const options = {
     family: 4
 };
 
-const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://cse341:<WebBackend123>@cluster0.q8tvx.mongodb.net/testDatabase?retryWrites=true&w=majority";
+const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://cse341:WebBackend123@cluster0.q8tvx.mongodb.net/testDatabase?retryWrites=true&w=majority";
                         
 
 app.set('view engine', 'ejs');
