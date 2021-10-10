@@ -13,6 +13,10 @@
                 <input type="text" name="title" id="title" value="<% if (editing) { %><%= product.title %><% } %>">
             </div>
             <div class="form-control">
+                <label for="author">Author</label>
+                <input type="text" name="author" id="author" value="<% if (editing) { %><%= product.author %><% } %>">
+            </div>
+            <div class="form-control">
                 <label for="imageUrl">Image URL</label>
                 <input type="text" name="imageUrl" id="imageUrl" value="<% if (editing) { %><%= product.imageUrl %><% } %>">
             </div>
