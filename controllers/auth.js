@@ -155,14 +155,8 @@ exports.postSignup = (req, res, next) => {
                     subject: 'Signup succeeded',
                     html: '<h1>You successfully signed up!</h1>',
                   }
-                res.redirect('/login');
-                return sgMail.send(msg)
-                .then(() => {
-                    console.log('Email sent')
-                  })
-                  .catch((error) => {
-                    console.error(error)
-                  })
+                res.redirect('/');
+                sgMail.send(msg);
             })
             .catch(err => {
                 const error = new Error(err);
