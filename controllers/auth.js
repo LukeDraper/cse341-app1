@@ -200,7 +200,8 @@ exports.postReset = (req, res, next) => {
             return res. redirect('/reset');
         }
         const token = buffer.toString('hex')
-        User.findOne({email: req.body.email})
+        const email = req.body.email;
+        User.findOne({email: email})
         .then( user => {
             if (!user) {
                 req.flash('error', 'No account with that email found.');
@@ -214,7 +215,7 @@ exports.postReset = (req, res, next) => {
             res.redirect('/login');
             console.log("Sending password reset email to: " + email);
             const msg = {
-                to: req.body.email, // Change to your recipient
+                to: email, // Change to your recipient
                 from: "dra20011@byui.edu", // Change to your verified sender
                 subject: 'Password Reset',
                 html: `
