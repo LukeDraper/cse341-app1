@@ -24,6 +24,9 @@ router.post('/add-product', [
     body('price').isFloat(),
     body('description')
         .isLength({ min: 5, max: 400 })
+        .trim(),
+    body('author')
+        .isString.isLength({min: 3})
         .trim()
 ], isAuth, adminController.postAddProduct);
 
@@ -38,6 +41,9 @@ router.post('/edit-product', [
     body('price').isFloat(),
     body('description')
         .isLength({ min: 5, max: 400 })
+        .trim(),
+    body('author')
+        .isString.isLength({min: 3})
         .trim()
 ], isAuth, adminController.postEditProduct);
 

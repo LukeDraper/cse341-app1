@@ -220,7 +220,7 @@ exports.postReset = (req, res, next) => {
             res.redirect('/login');
             console.log("Sending password reset email to: " + email);
             const msg = {
-                to: email, // Change to your recipient
+                to: req.body.email, // Change to your recipient
                 from: "dra20011@byui.edu", // Change to your verified sender
                 subject: 'Password Reset',
                 html: `
@@ -234,7 +234,7 @@ exports.postReset = (req, res, next) => {
             const error = new Error(err);
             error.httpStatusCode = 500;
             next(error);
-        })
+        });
     });
 };
 

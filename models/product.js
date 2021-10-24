@@ -28,6 +28,14 @@ const productSchema = new Schema({
     type: String,
     required: true
   }
+  // format: {
+  //   type: String,
+  //   required: true
+  // },
+  // publisher: {
+  //   type: String,
+  //   required: true
+  // }
 });
 
 module.exports = mongoose.model('Product', productSchema);

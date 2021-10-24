@@ -22,7 +22,6 @@ const store = new MongoDBStore({
 
 const csrfProtection = csrf();
 
-
 const cors = require('cors') // Place this with other requires (like 'path' and 'express')
 
 const corsOptions = {
@@ -62,7 +61,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req,res, next) => {
+app.use((req, res, next) => {
   if (!req.session.user) {
     return next();
   }
@@ -71,8 +70,8 @@ app.use((req,res, next) => {
       if(!user) {
         return next();
       }
-        req.user = user;
-        next();
+      req.user = user;
+      next();
     })
     .catch(err => {
       next(new Error(err));
