@@ -44,7 +44,8 @@ router.post('/edit-product', [
         .isLength({ min: 5, max: 400 })
         .trim(),
     body('author')
-        .isString.isLength({min: 3})
+        .isString()
+        .isLength({min: 3})
         .trim()
 ], isAuth, adminController.postEditProduct);
 
