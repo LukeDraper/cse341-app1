@@ -212,7 +212,6 @@ exports.postReset = (req, res, next) => {
             return user.save();
         })
         .then(result => {
-            res.redirect('/login');
             console.log("Sending password reset email to: " + email);
             const msg = {
                 to: email, // Change to your recipient
@@ -223,6 +222,7 @@ exports.postReset = (req, res, next) => {
                     <p>Click this <a href="https://cse-341-app1.herokuapp.com/reset/${token}">link</a> to set a new password.</p>
                 `,
               }
+              res.redirect('/login');
               sgMail.send(msg)
         })
         .catch(err => {
