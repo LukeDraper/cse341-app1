@@ -2,7 +2,7 @@ const crypto = require('crypto');
 
 const bcrypt = require('bcryptjs');
 const sgMail = require('@sendgrid/mail');
-const { validationResult } = require('express-validator/check');
+const { validationResult } = require('express-validator');
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
